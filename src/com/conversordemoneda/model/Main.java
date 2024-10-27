@@ -13,7 +13,19 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String monedas = """
+
+        System.out.println("si desea hacer una conversion entre monedas marque 1 de lo contrario marque 0");
+        String opcion = scanner.nextLine();
+        if (opcion.equals("0")){
+            System.out.println("Gracias por usar nuestros servicios");
+
+        }
+
+
+        while (opcion.equals("1")){
+
+
+            String monedas = """
                 Seleccione entre las siguientes monedas:
                     ARS - Peso argentino
                     BOB - Boliviano boliviano
@@ -23,26 +35,39 @@ public class Main {
                     USD - Dólar estadounidense
                 """;
 
-        System.out.println(monedas);
-        System.out.println("elija una moneda");
-        String tipoMoneda1 = scanner.nextLine();
-        System.out.println("elija otra moneda");
-        String tipoMoneda2 = scanner.nextLine();
-        System.out.println("Ingrese la cifra a convertir");
-        Double cifraAConvertir = scanner.nextDouble();
+            System.out.println(monedas);
+            System.out.println("elija una moneda");
+            String tipoMoneda1 = scanner.next();
+            System.out.println("elija otra moneda");
+            String tipoMoneda2 = scanner.next();
+            System.out.println("Ingrese la cifra a convertir");
+            Double cifraAConvertir = scanner.nextDouble();
 
 
-        BusquedaHttp busquedaHttp = new BusquedaHttp();
-        Moneda coins = busquedaHttp.moneda(tipoMoneda1, tipoMoneda2);
-        System.out.println("Tipo de moneda: " + coins);
 
-        SeleccionMonedas seleccionMonedas1 = new SeleccionMonedas();
-        List<String> seleccionMonedas = seleccionMonedas1.listaMonedas();
+            BusquedaHttp busquedaHttp = new BusquedaHttp();
+            Moneda coins = busquedaHttp.moneda(tipoMoneda1, tipoMoneda2);
+            System.out.println("Tipo de moneda: " + coins);
 
-        ConversorMoneda conversorMoneda = new ConversorMoneda();
-        conversorMoneda.conversor(coins, seleccionMonedas, tipoMoneda1,
-                 tipoMoneda2, cifraAConvertir );
+            SeleccionMonedas seleccionMonedas1 = new SeleccionMonedas();
+            List<String> seleccionMonedas = seleccionMonedas1.listaMonedas();
 
+            ConversorMoneda conversorMoneda = new ConversorMoneda();
+            conversorMoneda.conversor(coins, seleccionMonedas, tipoMoneda1,
+                    tipoMoneda2, cifraAConvertir );
+
+
+
+            System.out.println("Desea continuar marque 1 de lo contrario marque 0");
+            opcion=scanner.next();
+
+            if (opcion.equals("0")){
+                System.out.println("Gracias por usar nuestros servicios");
+                break;
+
+            }
+        }
+        scanner.close();
 
 
 
@@ -56,8 +81,8 @@ public class Main {
 
             }*/
         /*} else {*/
-            // Si no se obtuvo una respuesta válida
-          //  System.out.println("No se pudieron obtener las tasas de conversión. Verifique el tipo de moneda o su conexión a internet.");
+        // Si no se obtuvo una respuesta válida
+        //  System.out.println("No se pudieron obtener las tasas de conversión. Verifique el tipo de moneda o su conexión a internet.");
         //}
 
 
