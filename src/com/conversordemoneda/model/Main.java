@@ -1,0 +1,68 @@
+package com.conversordemoneda.model;
+
+import com.conversordemoneda.util.ConversorMoneda;
+import com.conversordemoneda.util.SeleccionMonedas;
+
+
+import java.util.List;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String monedas = """
+                Seleccione entre las siguientes monedas:
+                    ARS - Peso argentino
+                    BOB - Boliviano boliviano
+                    BRL - Real brasileño
+                    CLP - Peso chileno
+                    COP - Peso colombiano
+                    USD - Dólar estadounidense
+                """;
+
+        System.out.println(monedas);
+        System.out.println("elija una moneda");
+        String tipoMoneda1 = scanner.nextLine();
+        System.out.println("elija otra moneda");
+        String tipoMoneda2 = scanner.nextLine();
+        System.out.println("Ingrese la cifra a convertir");
+        Double cifraAConvertir = scanner.nextDouble();
+
+
+        BusquedaHttp busquedaHttp = new BusquedaHttp();
+        Moneda coins = busquedaHttp.moneda(tipoMoneda1, tipoMoneda2);
+        System.out.println("Tipo de moneda: " + coins);
+
+        SeleccionMonedas seleccionMonedas1 = new SeleccionMonedas();
+        List<String> seleccionMonedas = seleccionMonedas1.listaMonedas();
+
+        ConversorMoneda conversorMoneda = new ConversorMoneda();
+        conversorMoneda.conversor(coins, seleccionMonedas, tipoMoneda1,
+                 tipoMoneda2, cifraAConvertir );
+
+
+
+
+
+       /* if (coins != null && seleccionMonedas.contains(tipoMoneda1.toUpperCase())
+                && seleccionMonedas.contains(tipoMoneda2.toUpperCase())) {
+            // Mostramos las tasas de conversión
+            System.out.println("Tasas de conversión de " + tipoMoneda1.toUpperCase() + " Vs " + tipoMoneda2.toUpperCase() + ":");}
+            //for (Map.Entry<String, Double> entry : coins.conversion_rates().entrySet()) {
+              //  System.out.println(entry.getKey() + ": " + entry.getValue());
+
+            }*/
+        /*} else {*/
+            // Si no se obtuvo una respuesta válida
+          //  System.out.println("No se pudieron obtener las tasas de conversión. Verifique el tipo de moneda o su conexión a internet.");
+        //}
+
+
+
+
+    }
+}
+
