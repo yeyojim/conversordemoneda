@@ -72,18 +72,7 @@ public class Main {
 
 
 
-       /* if (coins != null && seleccionMonedas.contains(tipoMoneda1.toUpperCase())
-                && seleccionMonedas.contains(tipoMoneda2.toUpperCase())) {
-            // Mostramos las tasas de conversión
-            System.out.println("Tasas de conversión de " + tipoMoneda1.toUpperCase() + " Vs " + tipoMoneda2.toUpperCase() + ":");}
-            //for (Map.Entry<String, Double> entry : coins.conversion_rates().entrySet()) {
-              //  System.out.println(entry.getKey() + ": " + entry.getValue());
 
-            }*/
-        /*} else {*/
-        // Si no se obtuvo una respuesta válida
-        //  System.out.println("No se pudieron obtener las tasas de conversión. Verifique el tipo de moneda o su conexión a internet.");
-        //}
 
 
 
