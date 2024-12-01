@@ -1,3 +1,3 @@
 <h1 align="center"> CONVERSOR DE MONEDAS </h1>
 
-![logo](https://github.com/user-attachments/assets/af859c35-a35b-450f-b3ed-0b8be3c8fe32)
+![currency_converter_logo (1)](https://github.com/user-attachments/assets/1089233b-e126-469f-a061-ef9bc6ef5d74)
